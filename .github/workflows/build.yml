@@ -59,12 +59,9 @@ jobs:
         run: npm run build
 
       - name: Package installer
-        run: npx electron-builder ${{ matrix.platform_flag }}
+        run: npx electron-builder ${{ matrix.platform_flag }} --publish never
         env:
-          # Disable code-signing for now (add CSC_LINK / CSC_KEY_PASSWORD for prod)
           CSC_IDENTITY_AUTO_DISCOVERY: false
-          # electron-updater: GitHub token for release publishing
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Upload installer artifact
         uses: actions/upload-artifact@v4
