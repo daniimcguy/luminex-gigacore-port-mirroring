@@ -2,6 +2,7 @@
   "name": "luminex-gigacore-port-mirroring",
   "version": "1.0.0",
   "description": "Desktop dashboard for configuring port mirroring on Luminex GigaCore switches",
+  "type": "module",
   "main": "out/main/index.js",
   "scripts": {
     "dev": "electron-vite dev",
